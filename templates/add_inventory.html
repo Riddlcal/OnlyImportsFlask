@@ -4,30 +4,75 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Add Car Inventory</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        form {
+            width: 300px;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            background-color: red;
+            color: white;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: darkred;
+        }
+    </style>
 </head>
 <body>
     <h1>Add Car Inventory</h1>
     <form action="/add_inventory" method="POST">
         <label for="car_id">Car ID:</label>
-        <input type="text" id="car_id" name="car_id"><br><br>
+        <input type="text" id="car_id" name="car_id">
 
         <label for="dealership_id">Dealership ID:</label>
-        <input type="text" id="dealership_id" name="dealership_id"><br><br>
+        <input type="text" id="dealership_id" name="dealership_id">
 
         <label for="car_name">Car Name:</label>
-        <input type="text" id="car_name" name="car_name"><br><br>
+        <input type="text" id="car_name" name="car_name">
 
         <label for="year">Year:</label>
-        <input type="text" id="year" name="year"><br><br>
+        <input type="text" id="year" name="year">
 
         <label for="engine_type">Engine Type:</label>
-        <input type="text" id="engine_type" name="engine_type"><br><br>
+        <input type="text" id="engine_type" name="engine_type">
 
         <label for="fuel_type">Fuel Type:</label>
-        <input type="text" id="fuel_type" name="fuel_type"><br><br>
+        <input type="text" id="fuel_type" name="fuel_type">
 
         <label for="mileage">Mileage:</label>
-        <input type="text" id="mileage" name="mileage"><br><br>
+        <input type="text" id="mileage" name="mileage">
 
         <input type="submit" value="Submit">
     </form>
