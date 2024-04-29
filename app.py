@@ -34,7 +34,7 @@ def index():
 # Route to display the add car inventory form
 @app.route('/add_inventory')
 def add_inventory_form():
-    return render_template('add_inventory.html')
+    return render_template('add_inventory.html', car_id=generate_id('Car'))
 
 # Route to handle adding car inventory
 @app.route('/add_inventory', methods=['POST'])
@@ -42,12 +42,14 @@ def add_inventory():
     try:
         # Get form data
         car_id = request.form['car_id']
-        dealership_id = request.form['dealership_id']
         car_name = request.form['car_name']
         year = request.form['year']
         engine_type = request.form['engine_type']
         fuel_type = request.form['fuel_type']
         mileage = request.form['mileage']
+
+        # Static value for Dealership_ID
+        dealership_id = 'T7'
 
         # Create cursor
         cur = mysql.connection.cursor()
@@ -130,4 +132,4 @@ def get_inventory():
         return str(e), 500
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=False)
