@@ -3,6 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
     <title>Inventory</title>
     <style>
         .inventory-grid {
@@ -21,10 +25,40 @@
             max-width: 250px;
             height: auto;
         }
+
+        .back-button a {
+            color: white;
+            text-decoration: none;
+            display: flex; /* or inline-block */
+            align-items: center; /* align items vertically */
+        }
+
+        .back-button {
+            display: inline-flex;
+            align-items: center;
+            margin-bottom: 20px;
+            margin-top: 20px;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            background-color: red;
+            color: white;
+            cursor: pointer;
+            text-transform: uppercase;
+            font-family: "Orbitron", sans-serif;
+        }
+
+        .back-button:hover {
+            background-color: darkred;
+        }
     </style>
 </head>
 <body>
-    <h1>Inventory</h1>
+    <div class="container">
+        <div class="back-button">
+            <a href="/"><i class="fa-solid fa-chevron-left" style="margin-right: 10px;"></i>Back</a>
+        </div>
+    <h1 style="text-align: center;">Inventory</h1>
     <ul class="inventory-grid">
         {% for item in inventory_data %}
             <li class="inventory-item">
