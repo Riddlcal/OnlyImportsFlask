@@ -4,21 +4,36 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Add Car Inventory</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
     <style>
         body {
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
             margin: 0;
         }
 
+        .container {
+            max-width: 800px;
+            width: 100%;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+            font-family: "Orbitron", sans-serif;
+        }
+
         form {
-            width: 300px;
             padding: 20px;
             border: 1px solid #ccc;
             border-radius: 5px;
             background-color: #f9f9f9;
+            margin-bottom: 80px;
         }
 
         label {
@@ -27,12 +42,13 @@
         }
 
         input[type="text"] {
-            width: 100%;
+            width: calc(100% - 16px);
             padding: 8px;
             margin-bottom: 15px;
             border: 1px solid #ccc;
             border-radius: 4px;
             box-sizing: border-box;
+            font-family: "Orbitron", sans-serif;
         }
 
         input[type="submit"] {
@@ -43,38 +59,75 @@
             background-color: red;
             color: white;
             cursor: pointer;
+            text-transform: uppercase;
+            font-family: "Orbitron", sans-serif;
         }
 
         input[type="submit"]:hover {
             background-color: darkred;
         }
+
+        .back-button a {
+            color: white;
+            text-decoration: none;
+            display: flex; /* or inline-block */
+            align-items: center; /* align items vertically */
+        }
+
+        .back-button {
+            display: inline-flex;
+            align-items: center;
+            margin-bottom: 20px;
+            margin-top: 20px;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            background-color: red;
+            color: white;
+            cursor: pointer;
+            text-transform: uppercase;
+            font-family: "Orbitron", sans-serif;
+        }
+
+        .back-button:hover {
+            background-color: darkred;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+            font-family: "Orbitron", sans-serif;
+        }
     </style>
 </head>
 <body>
-    <h1>Add Car Inventory</h1>
-    <form action="/add_inventory" method="POST">
-        <label for="car_id">Car ID:</label>
-        <input type="text" id="car_id" name="car_id">
+    <div class="container">
+        <div class="back-button">
+            <a href="/"><i class="fa-solid fa-chevron-left" style="margin-right: 10px;"></i>Back</a>
+        </div>
+        <h1>Add Car Inventory</h1>
+        <form action="/add_inventory" method="POST">
 
-        <label for="dealership_id">Dealership ID:</label>
-        <input type="text" id="dealership_id" name="dealership_id">
+            <label for="car_name">Car Name:</label>
+            <input type="text" id="car_name" name="car_name">
 
-        <label for="car_name">Car Name:</label>
-        <input type="text" id="car_name" name="car_name">
+            <label for="year">Year:</label>
+            <input type="text" id="year" name="year">
 
-        <label for="year">Year:</label>
-        <input type="text" id="year" name="year">
+            <label for="engine_type">Engine Type:</label>
+            <input type="text" id="engine_type" name="engine_type">
 
-        <label for="engine_type">Engine Type:</label>
-        <input type="text" id="engine_type" name="engine_type">
+            <label for="fuel_type">Fuel Type:</label>
+            <input type="text" id="fuel_type" name="fuel_type">
 
-        <label for="fuel_type">Fuel Type:</label>
-        <input type="text" id="fuel_type" name="fuel_type">
+            <label for="mileage">Mileage:</label>
+            <input type="text" id="mileage" name="mileage">
 
-        <label for="mileage">Mileage:</label>
-        <input type="text" id="mileage" name="mileage">
+            <!-- Hidden input fields for randomly generated values -->
+            <input type="hidden" id="car_id" name="car_id" value="{{ car_id }}">
 
-        <input type="submit" value="Submit">
-    </form>
+            <input type="submit" value="Submit">
+        </form>
+    </div>
 </body>
 </html>
