@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inventory</title>
+    <style>
+        .inventory-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-gap: 20px;
+            list-style: none;
+            padding: 0;
+        }
+
+        .inventory-item {
+            text-align: center;
+        }
+
+        .inventory-item img {
+            max-width: 250px;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <h1>Inventory</h1>
+    <ul class="inventory-grid">
+        {% for item in inventory_data %}
+            <li class="inventory-item">
+                <img src="{{ item[3] }}" alt="Image of {{ item[1] }}" />
+                <div>{{ item[1] }} - {{ item[0] }} - {{ item[2] }}</div>
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
